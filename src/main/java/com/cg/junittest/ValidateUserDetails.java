@@ -16,7 +16,7 @@ public class ValidateUserDetails {
 	}
 
 	public boolean validateEmail(String email) {
-		Pattern pattern = Pattern.compile("^([a][b][c])[.]([a-zA-Z]+)[@]([b][l][.][c][o])[.]([a-zA-Z]{2})$");
+		Pattern pattern = Pattern.compile("^([a][b][c])([_+-.]{0,1}([a-zA-Z0-9]+))*[@][a-z0-9]{1,}[.]([c][o][m]|[n][e][t])([.][a-zA-Z]{2,}){0,1}$");
 		Matcher matcher = pattern.matcher(email);
 		return matcher.find();
 	}
