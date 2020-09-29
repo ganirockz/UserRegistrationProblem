@@ -9,7 +9,7 @@ public class UserRegistration {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to User Registration system");
 		Pattern pattern = Pattern.compile("[A-Z]{1}[a-zA-Z]{2,}");
-		String firstName;
+		String firstName,lastName;
 		while (true) {
 			System.out.println("Enter the first name of user: ");
 			firstName = sc.nextLine();
@@ -20,6 +20,18 @@ public class UserRegistration {
 			}
 			else {
 				System.out.println("Please enter the valid first name");
+			}
+		}
+		while (true) {
+			System.out.println("Enter the last name of user: ");
+			lastName = sc.nextLine();
+			Matcher m = pattern.matcher(lastName);
+			if(m.find()) {
+				System.out.println("User last name added successfully");
+				break;
+			}
+			else {
+				System.out.println("Please enter the valid last name");
 			}
 		}
 		sc.close();
