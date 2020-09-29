@@ -60,16 +60,15 @@ public class UserRegistration {
 				System.out.println("Please enter the valid phone number");
 			}
 		}
-		Pattern passwordPattern = Pattern.compile("[a-zA-Z0-9]{8,}");
+		Pattern passwordPattern = Pattern.compile("^[a-zA-Z]*[A-Z]+[0-9a-zA-Z]*${8,}");
 		while (true) {
 			System.out.println("Enter the password of user: ");
 			password = sc.nextLine();
 			Matcher m = passwordPattern.matcher(password);
-			if(m.find()) {
+			if (m.find()) {
 				System.out.println("User password added successfully");
 				break;
-			}
-			else {
+			} else {
 				System.out.println("Please enter the valid password");
 			}
 		}
