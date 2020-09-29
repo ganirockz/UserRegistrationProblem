@@ -7,69 +7,23 @@ public class UserRegistration {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Welcome to User Registration system");
-		Pattern pattern = Pattern.compile("[A-Z]{1}[a-zA-Z]{2,}");
-		String firstName,lastName,Email,phoneNumber,password;
+		Pattern pattern = Pattern.compile("^([a][b][c])([_+-.]{0,1}([a-zA-Z0-9]+))*[@][a-z0-9]{1,}[.]([c][o][m]|[n][e][t])([.][a-zA-Z]{2,}){0,1}$");
 		while (true) {
-			System.out.println("Enter the first name of user: ");
-			firstName = sc.nextLine();
-			Matcher m = pattern.matcher(firstName);
-			if(m.find()) {
-				System.out.println("User first name added successfully");
-				break;
-			}
-			else {
-				System.out.println("Please enter the valid first name");
-			}
-		}
-		while (true) {
-			System.out.println("Enter the last name of user: ");
-			lastName = sc.nextLine();
-			Matcher m = pattern.matcher(lastName);
-			if(m.find()) {
-				System.out.println("User last name added successfully");
-				break;
-			}
-			else {
-				System.out.println("Please enter the valid last name");
-			}
-		}
-		Pattern p = Pattern.compile("^([a][b][c])[.]([a-zA-Z]+)[@]([b][l][.][c][o])[.]([a-zA-Z]{2})$");
-		while (true) {
-			System.out.println("Enter the Email of user: ");
-			Email = sc.nextLine();
-			Matcher m = p.matcher(Email);
-			if(m.find()) {
-				System.out.println("User Email added successfully");
-				break;
-			}
-			else {
-				System.out.println("Please enter the valid Email");
-			}
-		}
-		Pattern mobilePattern = Pattern.compile("[0-9]{2}[ ][1-9]{1}[0-9]{9}");
-		while (true) {
-			System.out.println("Enter the phone number of user: ");
-			phoneNumber = sc.nextLine();
-			Matcher m = mobilePattern.matcher(phoneNumber);
-			if(m.find()) {
-				System.out.println("User phone number added successfully");
-				break;
-			}
-			else {
-				System.out.println("Please enter the valid phone number");
-			}
-		}
-		Pattern passwordPattern = Pattern.compile("^[a-zA-Z]*@[^W][a-zA-Z0-9]*${8,}");
-		while (true) {
-			System.out.println("Enter the password of user: ");
-			password = sc.nextLine();
-			Matcher m = passwordPattern.matcher(password);
+			System.out.println("Do you want to enter Email address: \nselect \n1.yes\n2.no");
+			int option = Integer.parseInt(sc.nextLine());
+			if(option == 1) {
+			System.out.println("Enter the EMail address to check pattern :");
+			String input = sc.nextLine();
+			Matcher m = pattern.matcher(input);
 			if (m.find()) {
-				System.out.println("User password added successfully");
-				break;
+				System.out.println("Valid");
 			} else {
-				System.out.println("Please enter the valid password");
+				System.out.println("Not Valid");
+			}
+			}
+			else{
+				System.out.println("Thank you!");
+				break;
 			}
 		}
 		sc.close();
