@@ -2,6 +2,7 @@ package com.cg.junittest;
 
 import org.junit.*;
 
+
 public class ValidateUserDetailsTest {
 	@Test
 	public void givenFirstName_whenMatches_ShouldReturnTrue() {
@@ -30,5 +31,11 @@ public class ValidateUserDetailsTest {
 	public void givenPassword_whenMatches_ShouldReturnTrue() {
 		ValidateUserDetails password = new ValidateUserDetails();
 		Assert.assertTrue(password.validatePassword("@Ganesh141324"));
+	}
+	@Test
+	public void givenMessage_whenNotSad_ShouldReturnHappy() {
+		ValidateUserDetails moodAnalyser = new ValidateUserDetails();
+		String mood = moodAnalyser.analyseMood("This is a Happy message");
+		Assert.assertEquals("Happy", mood);
 	}
 }

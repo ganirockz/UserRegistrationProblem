@@ -32,4 +32,15 @@ public class ValidateUserDetails {
 		Matcher matcher = pattern.matcher(password);
 		return matcher.find();
 	}
+
+	public String analyseMood(String message) {
+
+		if (message.contains("Happy")) {
+			System.out.println("user registerd successfully");
+			return "Happy";}
+		else {
+			System.out.println("user not registered");
+			return "SAD";
+		}
+	}
 }
