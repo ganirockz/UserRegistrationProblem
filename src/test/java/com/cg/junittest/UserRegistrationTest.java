@@ -1,13 +1,14 @@
+
 package com.cg.junittest;
 
 import org.junit.*;
 
 
-public class ValidateUserDetailsTest {
+public class UserRegistrationTest {
 	@Test
 	public void givenFirstName_whenMatches_ShouldReturnTrue() {
 		try {
-		ValidateUserDetails firstName = new ValidateUserDetails();
+			UserRegistration firstName = new UserRegistration();
 		Assert.assertTrue(firstName.validateFirstName("anesh"));
 		}
 		catch(ValidateFirstNameException e) {
@@ -17,7 +18,7 @@ public class ValidateUserDetailsTest {
 	@Test
 	public void givenLastName_whenMatches_ShouldReturnTrue() {
 		try {
-		ValidateUserDetails lastName = new ValidateUserDetails();
+			UserRegistration lastName = new UserRegistration();
 		Assert.assertTrue(lastName.validateLastName("apeti"));
 		}
 		catch(ValidateLastNameException e) {
@@ -27,7 +28,7 @@ public class ValidateUserDetailsTest {
 	@Test
 	public void givenEmail_whenMatches_ShouldReturnTrue() {
 		try {
-		ValidateUserDetails email = new ValidateUserDetails();
+			UserRegistration email = new UserRegistration();
 		Assert.assertTrue(email.validateEmail("xyz@bl.co.in"));
 		}
 		catch(ValidateEmailException e) {
@@ -38,7 +39,7 @@ public class ValidateUserDetailsTest {
 	@Test
 	public void givenPhoneNumber_whenMatches_ShouldReturnTrue() {
 		try {
-		ValidateUserDetails phoneNumber = new ValidateUserDetails();
+			UserRegistration phoneNumber = new UserRegistration();
 		Assert.assertTrue(phoneNumber.validatePhoneNumber("919866832489"));
 		}
 		catch(ValidatePhoneNumberException e) {
@@ -47,7 +48,7 @@ public class ValidateUserDetailsTest {
 	@Test
 	public void givenPassword_whenMatches_ShouldReturnTrue() {
 		try {
-		ValidateUserDetails password = new ValidateUserDetails();
+			UserRegistration password = new UserRegistration();
 		Assert.assertTrue(password.validatePassword("Ganesh141324"));
 		}
 		catch(ValidatePasswordException e) {
