@@ -6,36 +6,53 @@ import org.junit.*;
 public class ValidateUserDetailsTest {
 	@Test
 	public void givenFirstName_whenMatches_ShouldReturnTrue() {
+		try {
 		ValidateUserDetails firstName = new ValidateUserDetails();
-		Assert.assertTrue(firstName.validateFirstName("Ganesh"));
-	}
+		Assert.assertTrue(firstName.validateFirstName("anesh"));
+		}
+		catch(ValidateFirstNameException e) {
+			System.out.println(e.getMessage());
+		}}
 
 	@Test
 	public void givenLastName_whenMatches_ShouldReturnTrue() {
+		try {
 		ValidateUserDetails lastName = new ValidateUserDetails();
-		Assert.assertTrue(lastName.validateLastName("Rapeti"));
-	}
+		Assert.assertTrue(lastName.validateLastName("apeti"));
+		}
+		catch(ValidateLastNameException e) {
+			System.out.println(e.getMessage());
+		}}
 
 	@Test
 	public void givenEmail_whenMatches_ShouldReturnTrue() {
+		try {
 		ValidateUserDetails email = new ValidateUserDetails();
-		Assert.assertTrue(email.validateEmail("abc.xyz@bl.co.in"));
-	}
+		Assert.assertTrue(email.validateEmail("xyz@bl.co.in"));
+		}
+		catch(ValidateEmailException e) {
+			System.out.println(e.getMessage());
+		}
+		}
 
 	@Test
 	public void givenPhoneNumber_whenMatches_ShouldReturnTrue() {
+		try {
 		ValidateUserDetails phoneNumber = new ValidateUserDetails();
-		Assert.assertTrue(phoneNumber.validatePhoneNumber("91 9866832489"));
-	}
-
-	public void givenPassword_whenMatches_ShouldReturnTrue() {
-		ValidateUserDetails password = new ValidateUserDetails();
-		Assert.assertTrue(password.validatePassword("@Ganesh141324"));
-	}
+		Assert.assertTrue(phoneNumber.validatePhoneNumber("919866832489"));
+		}
+		catch(ValidatePhoneNumberException e) {
+			System.out.println(e.getMessage());
+		}}
 	@Test
-	public void givenMessage_whenNotSad_ShouldReturnHappy() {
-		ValidateUserDetails moodAnalyser = new ValidateUserDetails();
-		String mood = moodAnalyser.analyseMood("This is a Happy message");
-		Assert.assertEquals("Happy", mood);
-	}
+	public void givenPassword_whenMatches_ShouldReturnTrue() {
+		try {
+		ValidateUserDetails password = new ValidateUserDetails();
+		Assert.assertTrue(password.validatePassword("Ganesh141324"));
+		}
+		catch(ValidatePasswordException e) {
+			System.out.println(e.getMessage());
+		}
+		}
+	
 }
