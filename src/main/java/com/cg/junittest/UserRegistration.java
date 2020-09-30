@@ -1,8 +1,9 @@
+
 package com.cg.junittest;
 
 import java.util.regex.*;
 
-public class ValidateUserDetails {
+public class UserRegistration {
 	public boolean validateFirstName(String firstName) throws ValidateFirstNameException{
 		try {
 		Pattern pattern = Pattern.compile("[A-Z]{1}[a-zA-Z]{2,}");
